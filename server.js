@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const axios = require("axios")
 const layouts = require('express-ejs-layouts');
 const session = require('express-session');
 const flash = require("connect-flash")
@@ -42,9 +43,21 @@ app.use((req, res, next) => {
 })
 
 
-app.get('/', (req, res) => {
-  res.render('index');
-});
+// app.get('/', (req, res) => {
+//   res.render('index');
+// });
+app.get('/',function(req,res){
+  const apiUrl = 'https://newsapi.org/v2/everything'
+  axios.get(apiUrl,{
+      params: {
+          q: "apple",
+          apikey: process.env.API_KEY,
+      }
+  }).then((responseData)=>{
+      res.render('index',{topNews:responseData.data.articles})
+      // res.send("Done")
+  })
+})
 
 app.get('/profile', isLoggedIn, (req, res) => {
   res.render('profile');
