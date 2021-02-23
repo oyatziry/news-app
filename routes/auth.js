@@ -20,7 +20,7 @@ router.post('/signup', (req, res) => {
       // success
       passport.authenticate('local', {
         successRedirect: '/',
-        successFlash: 'Account created and user logged in!'
+        // successFlash: 'Account created and user logged in!'
       })(req, res)
     } else {
       // user already exists, so we redirect
@@ -41,7 +41,7 @@ router.get('/login', (req, res) => {
 router.post('/login', passport.authenticate('local', {
   successRedirect: '/',
   failureRedirect: '/auth/login',
-  successFlash: 'You have logged in!',
+  // successFlash: 'You have logged in!',
   failureFlash: 'Invalid username and/or password.'
 }))
 
