@@ -6,6 +6,7 @@ const session = require('express-session');
 const flash = require("connect-flash")
 const passport = require('./config/ppConfig');
 const isLoggedIn = require('./middleware/isLoggedIn')
+const db = require("./models")
 
 const app = express();
 
@@ -67,7 +68,10 @@ app.get('/profile', isLoggedIn, (req, res) => {
 });
 
 app.get('/bookmarks', isLoggedIn, (req, res) => {
-  res.render('bookmarks/saved');
+  db.article.findAll()
+  .then((newsData) => {
+    res.render('bookmarks/saved', { articles: newsData });
+  })
 });
 
 app.use('/auth', require('./routes/auth'));
