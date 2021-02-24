@@ -1,16 +1,22 @@
-<h2>NewsApp</h2>
-<div class="search">
-    <form method="GET" action="/">
-        <label for="phrase">Search</label>
-        <input type="text" name="phrase" id="phrase">
-        <input type="submit" value="Click">
-    </form>
-</div>
-<div>
-    <% topNews.forEach(news => { %>
-        <h2>Title: <%= news.title%> </h2>
-        <img src="<%= news.urlToImage %> " alt="" style="width:500px; height:500;">
-        <p><%= news.description %> </p>
-        <a href="<%= news.url %> ">Go to link</a>
-    <% }) %>  
+<div class="container">
+    <h2>NewsApp</h2>
+    <div class="search">
+        <form method="GET" class="form-inline my-2 my-lg-0" action="/">
+            <label for="phrase">Search</label>
+            <input type="text" name="phrase" id="phrase">
+            <input type="submit" value="Click">
+        </form>
+    </div>
+    <div>
+        <% if (topNews.length > 0) {%>
+            <% topNews.forEach(news => { %>
+                <h2>Title: <%= news.title%> </h2>
+                <img src="<%= news.urlToImage %> " alt="" style="width:500px; height:500;">
+                <p><%= news.description %> </p>
+                <a href="<%= news.url %> ">Go to link</a>
+            <% }) %> 
+        <% } else { %>
+            <p>Opps! No such result was found. Try Again....</p> 
+        <% } %>  
+    </div>
 </div>
