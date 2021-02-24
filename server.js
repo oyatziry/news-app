@@ -47,7 +47,7 @@ app.use((req, res, next) => {
 //   res.render('index');
 // });
 app.get('/',function(req,res){
-  const apiUrl = 'https://newsapi.org/v2/everything'
+  const apiUrl = 'https://newsapi.org/v2/top-headlines'
   axios.get(apiUrl,{
       params: {
           q: "apple",
