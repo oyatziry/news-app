@@ -1,4 +1,10 @@
 .env
 node_modules
 package-lock.json
+<<<<<<< HEAD
 package.json
+=======
+./config.json
+package.json
+package-lock.json
+>>>>>>> submain
