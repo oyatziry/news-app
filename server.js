@@ -67,7 +67,7 @@ app.get('/profile', isLoggedIn, (req, res) => {
   res.render('profile');
 });
 
-app.get('/bookmarks', (req, res) => {
+app.get('/bookmarks', isLoggedIn, (req, res) => {
   db.article.findAll()
   .then((newsData) => {
     res.render('bookmarks/saved', { articles: newsData });
