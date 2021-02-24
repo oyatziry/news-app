@@ -50,8 +50,11 @@ app.get('/',function(req,res){
   const apiUrl = 'https://newsapi.org/v2/top-headlines'
   axios.get(apiUrl,{
       params: {
-          q: "apple",
+          q: req.query.phrase || "us",
           apikey: process.env.API_KEY,
+          // country: "us",
+          // category: "technology",
+
       }
   }).then((responseData)=>{
       res.render('index',{topNews:responseData.data.articles})
