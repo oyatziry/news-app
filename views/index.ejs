@@ -1,10 +1,17 @@
-<h2>Homepage</h2>
+<h2>NewsApp</h2>
+<div class="search">
+    <form method="GET" action="/">
+        <label for="phrase">Search</label>
+        <input type="text" name="phrase" id="phrase">
+        <input type="submit" value="Click">
+    </form>
+</div>
 <div>
     <% topNews.forEach(news => { %>
-        <h1><%= news.author %> </h1>
-        <h2><%= news.title%> </h2>
+        <h2>Title: <%= news.title%> </h2>
+        <p>Author: <%= news.author %> </p>
+        <img src="<%= news.urlToImage %> " alt="" width:250 height:250>
         <p><%= news.description %> </p>
-
+        <a href="<%= news.url %> ">Go to link</a>
     <% }) %>  
 </div>
-<h2>This is the Homepage</h2>
