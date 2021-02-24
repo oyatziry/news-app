@@ -7,3 +7,13 @@ nav ul li {
 h1 {
   color: chartreuse;
 }
+.login, .signUp{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 80vh;
+}
+.lform, .sform{
+  width:80%;
+}
