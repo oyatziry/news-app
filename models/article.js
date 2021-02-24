@@ -11,6 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+<<<<<<< HEAD
+=======
+      models.article.belongsToMany(models.user, { through : "usersArticles" })
+>>>>>>> 43194a04fcf2cf10ed25aac4b85fc2a97a14ad2e
     }
   };
   article.init({
