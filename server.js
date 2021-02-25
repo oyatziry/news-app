@@ -6,6 +6,7 @@ const session = require('express-session');
 const flash = require("connect-flash")
 const passport = require('./config/ppConfig');
 const isLoggedIn = require('./middleware/isLoggedIn')
+const db = require("./models")
 
 const app = express();
 
@@ -50,23 +51,34 @@ app.get('/',function(req,res){
   const apiUrl = 'https://newsapi.org/v2/top-headlines'
   axios.get(apiUrl,{
       params: {
-          q: "apple",
+          q: req.query.phrase || "us",
           apikey: process.env.API_KEY,
+          // country: "us",
+          // category: "technology",
       }
   }).then((responseData)=>{
       res.render('index',{topNews:responseData.data.articles})
       // res.send("Done")
   })
 })
+// after we logged in 
+app.get('/main',isLoggedIn, function(req,res){
+  const apiUrl = 'https://newsapi.org/v2/top-headlines'
+  axios.get(apiUrl,{
+      params: {
+          q: req.query.phrase || "us",
+          apikey: process.env.API_KEY,
+          // country: "us",
+          // category: "technology",
+      }
+  }).then((responseData)=>{
+      res.render('main',{topNews:responseData.data.articles})
+      // res.send("Done")
+  })
+})
 
-app.get('/profile', isLoggedIn, (req, res) => {
-  res.render('profile');
-});
-
-app.get('/bookmarks', isLoggedIn, (req, res) => {
-  res.render('bookmarks/saved');
-});
-
+app.use('/profile', require('./routes/profile'))
+app.use('/bookmarks', require('./routes/bookmarks'))
 app.use('/auth', require('./routes/auth'));
 
 var server = app.listen(process.env.PORT || 3000, ()=> console.log(`🎧You're listening to the smooth sounds of port ${process.env.PORT || 3000}🎧`));

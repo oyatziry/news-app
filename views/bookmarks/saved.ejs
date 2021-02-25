@@ -1,1 +1,16 @@
-<h1>This the the bookmark page</h1>
+<div class="container">
+  <h1>This the the bookmark page</h1>
+
+  <h2>My Articles</h2>
+
+  <% if (articles.length < 1) { %>
+    <h4>No Articles Bookmarked</h4>
+  <% } %>
+
+  <% articles.forEach(function(news) { %>
+      <h2>
+        <%= news.title %>
+      </h2>
+  <% }); %>
+  </body>
+</div>
