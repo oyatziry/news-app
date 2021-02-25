@@ -5,7 +5,22 @@ const db = require("../models")
 
 
 router.get('/', isLoggedIn, (req, res) => {
-    res.render('profile');
+    db.user.findOne({
+        where : {
+            id : req.user.id
+        }
+    }).then((user) => {
+        res.render('profile', { user : user});
+    })
 });
+
+// delete
+router.delete('/:id',function(req,res){
+    db.user.destroy({
+      where: {id: req.user.id}
+    }).then(function(deleated){
+      res.redirect('/')
+    })
+})
 
 module.exports = router;
