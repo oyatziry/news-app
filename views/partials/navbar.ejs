@@ -1,21 +1,37 @@
-<div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">NewsApp</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">NewsApp</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <!-- <div class="d-flex flex-row-reverse"> -->
+        <div class="collapse navbar-collapse d-flex flex-row-reverse" id="navbarSupportedContent">
+            <div class="search">
+                <form method="GET" class="form-inline my-2 my-lg-0" action="/">
+                    <input type="text" name="phrase" id="phrase">
+                    <input type="submit" value="Search">
+                </form>
+            </div>
+            <ul class="navbar-nav mr-auto d-flex justify-content-end">
             <% if (!currentUser) { %>
-                <li class="nav-item active">
+                <!-- <li class="nav-item active">
                 <a class="nav-link" href="/auth/signup">Sign Up <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
                 <a class="nav-link" href="/auth/login">Login <span class="sr-only">(current)</span></a>
+                </li> -->
+                <li class="nav-item dropdown d-flex justify-content-end">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="./public/icons/iconfinder_30.User_290120.png" width="30" height="30" alt="profile">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/auth/login">LogIn</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/auth/signup">Sign Up</a>
+                    </div>
                 </li>
             <% } else { %>
-                <li class="nav-item active">
+                <!-- <li class="nav-item active">
                     <a class="nav-link" href="/auth/logout">Logout <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
@@ -23,9 +39,19 @@
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="/bookmarks">Bookmark <span class="sr-only">(current)</span></a>
-                </li>
+                </li> -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/profile">Profile</a>
+                    <a class="dropdown-item" href="/bookmarks">bookmarks</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/auth/logout">Logout</a>
+                    </div>
             <% } %>
-          </ul>
+            </ul>
         </div>
-    </nav>    
-</div>
+    <!-- </div> -->
+</nav>    
