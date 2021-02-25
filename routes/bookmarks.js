@@ -35,18 +35,27 @@ router.post('/', isLoggedIn, (req,res) => {
                 description:req.body.description,
             }
         }).then(([bookmarked,created])=>{
-            console.log("-------------------")
-            console.log(bookmarked.dataValues.id)
-            console.log("-------------------")
             returnedUser.addArticle(bookmarked.dataValues.id).then(()=>{
                 res.redirect('/bookmarks')
             })
-            // console.log("-------------------")
-            // console.log(bookmarked)
-            // console.log("-------------------")
         }).catch((error)=>{
             res.status(400).render('404')
         })
+    })
+})
+
+// delete
+router.delete('/:id', isLoggedIn, (req, res) => {
+    db.usersArticles.destroy({
+      where: { articleId: req.params.id }
+    }).then(() => {
+      db.article.destroy({
+        where: { id: req.params.id }
+      }).then((deleted) => {
+        res.redirect('/bookmarks');
+      })
+    }).catch((error) => {
+      res.status(400).render('404');
     })
 })
 
