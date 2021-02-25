@@ -55,10 +55,24 @@ app.get('/',function(req,res){
           apikey: process.env.API_KEY,
           // country: "us",
           // category: "technology",
-
       }
   }).then((responseData)=>{
       res.render('index',{topNews:responseData.data.articles})
+      // res.send("Done")
+  })
+})
+// after we logged in 
+app.get('/main',isLoggedIn, function(req,res){
+  const apiUrl = 'https://newsapi.org/v2/top-headlines'
+  axios.get(apiUrl,{
+      params: {
+          q: req.query.phrase || "us",
+          apikey: process.env.API_KEY,
+          // country: "us",
+          // category: "technology",
+      }
+  }).then((responseData)=>{
+      res.render('main',{topNews:responseData.data.articles})
       // res.send("Done")
   })
 })

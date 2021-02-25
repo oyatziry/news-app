@@ -1,0 +1,33 @@
+<div class="container">
+    <h2>NewsApp</h2>
+    <div class="search">
+        <form method="GET" class="form-inline my-2 my-lg-0" action="/main">
+            <label for="phrase">Search</label>
+            <input type="text" name="phrase" id="phrase">
+            <input type="submit" value="Click">
+        </form>
+    </div>
+    <div>
+        <% if (topNews.length > 0) {%>
+            <% topNews.forEach(news => { %>
+                <h2>Title: <%= news.title %> </h2>
+                <img src="<%= news.urlToImage %> " alt="" style="width:500px; height:500;">
+                <p><%= news.description %> </p>
+                <form method="POST" action="/bookmarks">
+                    <input hidden type="text" name="title" value="<%= news.title %> ">
+                    <input hidden type="text" name="source" value="<%= news.source.name %> ">
+                    <input hidden type="text" name="date" value="<%= news.publishedAt %> ">
+                    <input hidden type="text" name="articleLink" value="<%= news.url %> ">
+                    <input hidden type="text" name="image" value="<%= news.urlToImage %> ">
+                    <input hidden type="text" name="author" value="<%= news.author %> ">
+                    <input hidden type="text" name="description" value="<%= news.description %> ">
+                    <input hidden type="text" name="userId" value="<%= currentUser.id %> ">
+                    <button type="submit">Add to Bookmark</button>
+                </form>
+                <a href="<%= news.url %> ">Go to link</a>
+            <% }) %> 
+        <% } else { %>
+            <p>Opps! No such result was found. Try Again....</p> 
+        <% } %>  
+    </div>
+</div>

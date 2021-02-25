@@ -10,7 +10,7 @@
     <div>
         <% if (topNews.length > 0) {%>
             <% topNews.forEach(news => { %>
-                <h2>Title: <%= news.title%> </h2>
+                <h2>Title: <%= news.title %> </h2>
                 <img src="<%= news.urlToImage %> " alt="" style="width:500px; height:500;">
                 <p><%= news.description %> </p>
                 <a href="<%= news.url %> ">Go to link</a>
