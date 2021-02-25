@@ -8,8 +8,13 @@
   <% } %>
 
   <% articles.forEach(function(news) { %>
+    <div>
       <h2>
         <%= news.title %>
       </h2>
+      <form method="POST" action="/bookmarks/<%= news.id %>/?_method=DELETE">
+        <button class="btn btn-danger" type="submit">Delete</button>
+      </form>
+    </div>
   <% }); %>
 </div>
