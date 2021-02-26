@@ -1,30 +1,33 @@
 <div class="container">
-    <h2>NewsApp</h2>
-    <div class="search">
-        <form method="GET" class="form-inline my-2 my-lg-0" action="/main">
-            <label for="phrase">Search</label>
-            <input type="text" name="phrase" id="phrase">
-            <input type="submit" value="Click">
-        </form>
-    </div>
-    <div>
+    <div class="row" id="row">
+        <%= counter = 0 %>
         <% if (topNews.length > 0) {%>
             <% topNews.forEach(news => { %>
-                <h2>Title: <%= news.title %> </h2>
-                <img src="<%= news.urlToImage %> " alt="" style="width:500px; height:500;">
-                <p><%= news.description %> </p>
-                <form method="POST" action="/bookmarks">
-                    <input hidden type="text" name="title" value="<%= news.title %> ">
-                    <input hidden type="text" name="source" value="<%= news.source.name %> ">
-                    <input hidden type="text" name="date" value="<%= news.publishedAt %> ">
-                    <input hidden type="text" name="articleLink" value="<%= news.url %> ">
-                    <input hidden type="text" name="image" value="<%= news.urlToImage %> ">
-                    <input hidden type="text" name="author" value="<%= news.author %> ">
-                    <input hidden type="text" name="description" value="<%= news.description %> ">
-                    <input hidden type="text" name="userId" value="<%= currentUser.id %> ">
-                    <button type="submit">Add to Bookmark</button>
-                </form>
-                <a href="<%= news.url %> ">Go to link</a>
+                <% if(counter != 0 && counter % 3 == 0) { %>
+                    </div>
+                    <div class="row" id="row">
+                <% } %>
+                <div class="col-12 col-md-4">
+                    <img src="<%= news.urlToImage %> " alt="images">
+                    <div class="news-info">
+                        <p class="source"> <%= news.source.name %>  / </p>
+                        <p class= "date"> <%= news.publishedAt %> </p>
+                        <a class="title" href="<%= news.url %>"> <%= news.title.toUpperCase() %>  </a>
+                    </div>
+                    <p><%= news.description %> </p>
+                    <form method="POST" action="/bookmarks">
+                        <input hidden type="text" name="title" value="<%= news.title %> ">
+                        <input hidden type="text" name="source" value="<%= news.source.name %> ">
+                        <input hidden type="text" name="date" value="<%= news.publishedAt %> ">
+                        <input hidden type="text" name="articleLink" value="<%= news.url %> ">
+                        <input hidden type="text" name="image" value="<%= news.urlToImage %> ">
+                        <input hidden type="text" name="author" value="<%= news.author %> ">
+                        <input hidden type="text" name="description" value="<%= news.description %> ">
+                        <input hidden type="text" name="userId" value="<%= currentUser.id %> ">
+                        <button type="submit">Add to Bookmark</button>
+                    </form>
+                </div>
+                <% counter++ %>
             <% }) %> 
         <% } else { %>
             <p>Opps! No such result was found. Try Again....</p> 

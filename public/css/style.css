@@ -8,6 +8,10 @@ h1 {
   color: chartreuse;
 }
 
+.navbar-brand{
+  font-size: 2em;
+}
+
 .login, .signUp{
   display: flex;
   flex-direction: column;
@@ -39,7 +43,8 @@ img{
 }
 
 .news-info{
-  margin-right: 5px;
+  margin-right: 5%;
+  margin-top: 2%;
 }
 
 .source{
