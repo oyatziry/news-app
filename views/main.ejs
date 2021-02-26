@@ -10,8 +10,8 @@
     <div>
         <% if (topNews.length > 0) {%>
             <% topNews.forEach(news => { %>
-                <h2>Title: <%= news.title %> </h2>
-                <img src="<%= news.urlToImage %> " alt="" style="width:500px; height:500;">
+                <a href="<%= news.url %>"><h2>Title: <%= news.title %> </h2></a>
+                <a href="<%= news.url %>"><img src="<%= news.urlToImage %> " alt="" style="width:500px; height:500;"></a>
                 <p><%= news.description %> </p>
                 <form method="POST" action="/bookmarks">
                     <input hidden type="text" name="title" value="<%= news.title %> ">
@@ -24,7 +24,6 @@
                     <input hidden type="text" name="userId" value="<%= currentUser.id %> ">
                     <button type="submit">Add to Bookmark</button>
                 </form>
-                <a href="<%= news.url %> ">Go to link</a>
             <% }) %> 
         <% } else { %>
             <p>Opps! No such result was found. Try Again....</p> 
