@@ -25,6 +25,10 @@ h1 {
   border-radius: 30px;
 }
 
+#signup-button:hover {
+  background-color: goldenrod;
+}
+
 .welcome-login, .welcome-signup {
-  text-align: center;
+  margin-left: 10px;
 }
