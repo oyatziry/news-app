@@ -5,9 +5,9 @@ const layouts = require('express-ejs-layouts');
 const session = require('express-session');
 const flash = require("connect-flash")
 const passport = require('./config/ppConfig');
-const isLoggedIn = require('./middleware/isLoggedIn')
-const methodOverride = require('method-override')
-const db = require("./models")
+const isLoggedIn = require('./middleware/isLoggedIn');
+const methodOverride = require('method-override');
+const db = require("./models");
 
 const app = express();
 
@@ -46,21 +46,16 @@ app.use((req, res, next) => {
 })
 
 
-// app.get('/', (req, res) => {
-//   res.render('index');
-// });
 app.get('/',function(req,res){
   const apiUrl = 'https://newsapi.org/v2/top-headlines'
   axios.get(apiUrl,{
       params: {
           q: req.query.phrase || "us",
+          language: 'en',
           apikey: process.env.API_KEY,
-          // country: "us",
-          // category: "technology",
       }
   }).then((responseData)=>{
       res.render('index',{topNews:responseData.data.articles})
-      // res.send("Done")
   })
 })
 // after we logged in 
@@ -69,13 +64,11 @@ app.get('/main',isLoggedIn, function(req,res){
   axios.get(apiUrl,{
       params: {
           q: req.query.phrase || "us",
+          language: 'en',
           apikey: process.env.API_KEY,
-          // country: "us",
-          // category: "technology",
       }
   }).then((responseData)=>{
       res.render('main',{topNews:responseData.data.articles})
-      // res.send("Done")
   })
 })
 

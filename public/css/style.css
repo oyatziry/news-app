@@ -7,28 +7,64 @@ nav ul li {
 h1 {
   color: chartreuse;
 }
-.login, .signUp {
+
+.navbar-brand{
+  font-size: 2em;
+}
+
+.login, .signUp{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   height: 80vh;
 }
-.form-control {
-  width: 310px;
+
+.lform, .sform{
+  width:80%;
 }
 
-#signup-button, #login-button {
-  margin-left: 65px;
-  height: 40px;
-  width: 170px;
-  border-radius: 30px;
+.container{
+  margin-top: 5%;
 }
 
-#signup-button:hover {
-  background-color: goldenrod;
+svg{
+  margin-left: 2px;
+  height: 30px;
+  width: 30px;
 }
 
-.welcome-login, .welcome-signup {
-  margin-left: 10px;
+svg:hover{
+  color: indianred;
+}
+
+#row{
+  margin-bottom: 5%;
+}
+
+img{
+  width: 100%;
+  object-fit: cover;
+}
+
+.news-info{
+  margin-right: 5%;
+  margin-top: 2%;
+}
+
+.source{
+  color: indianred;
+  display: inline-block;
+  font-size: 0.8em;
+}
+
+.date{
+  display: inline-block;
+  font-size: 0.8em;
+}
+
+.title{
+  display: block;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
 }
