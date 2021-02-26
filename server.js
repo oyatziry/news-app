@@ -46,21 +46,16 @@ app.use((req, res, next) => {
 })
 
 
-// app.get('/', (req, res) => {
-//   res.render('index');
-// });
 app.get('/',function(req,res){
   const apiUrl = 'https://newsapi.org/v2/top-headlines'
   axios.get(apiUrl,{
       params: {
           q: req.query.phrase || "us",
+          language: 'en',
           apikey: process.env.API_KEY,
-          // country: "us",
-          // category: "technology",
       }
   }).then((responseData)=>{
       res.render('index',{topNews:responseData.data.articles})
-      // res.send("Done")
   })
 })
 // after we logged in 
@@ -69,13 +64,11 @@ app.get('/main',isLoggedIn, function(req,res){
   axios.get(apiUrl,{
       params: {
           q: req.query.phrase || "us",
+          language: 'en',
           apikey: process.env.API_KEY,
-          // country: "us",
-          // category: "technology",
       }
   }).then((responseData)=>{
       res.render('main',{topNews:responseData.data.articles})
-      // res.send("Done")
   })
 })
 
