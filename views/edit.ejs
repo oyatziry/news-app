@@ -1,5 +1,5 @@
     <div class="signUp">
-        <form action="/edit/<%=user.id%>/?_method=PUT" class="sform" method="POST"></form>
+        <form action="/profile/<%=user.id%>/?_method=PUT" class="sform" method="POST">
         <div class="form-group">
             <label for="new-email">Email address</label>
             <input type="email" class="form-control" id="new-email" name="email" aria-describedby="emailHelp">
@@ -7,10 +7,6 @@
         <div class="form-group">
             <label for="new-name">Full Name</label>
             <input type="text" class="form-control" id="new-name" name="name" aria-describedby="emailHelp">
-        </div>
-        <div class="form-group">
-            <label for="new-password">Password</label>
-            <input type="password" class="form-control" id="new-password" name="password" min="8">
         </div>
         <button type="submit" class="btn btn-primary">Edit</button>
         </form>

@@ -29,26 +29,26 @@ router.delete('/:id', isLoggedIn, (req, res) => {
       res.status(400).render('404');
     })
 })
-//edit
-// router.get('/edit/:id', function(req, res){
-//     db.user.findOne({
-//       where: {
-//         id : req.params.id
-//       }
-//     }).then(function(user){
-//       res.render('edit', {user: user});
-//     })
-// });
-
-// router.put('/:id', (req,res) => {
-//     db.user.update(
-//       { name : req.body.name,
-//         email : req.body.email,
-//         password : req.body.password },
-//       { where: {id: req.user.id}}
-//     ).then(
-//       res.redirect('/')
-//     )
-// })
+//edit for rendering
+router.get('/edit/:id', function(req, res){
+    db.user.findOne({
+      where: {
+        id : req.params.id
+      }
+    }).then(function(user){
+      res.render('edit', {user: user});
+    })
+});
+// edit 
+router.put('/:id', (req,res) => {
+    db.user.update(
+      { name : req.body.name,
+        email : req.body.email,
+      },
+      { where: {id: req.user.id}}
+    ).then(
+      res.redirect('/profile')
+    )
+})
 
 module.exports = router;
