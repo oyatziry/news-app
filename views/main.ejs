@@ -14,7 +14,6 @@
                         <p class= "date"> <%= news.publishedAt %> </p>
                         <a class="title" href="<%= news.url %>"> <%= news.title.toUpperCase() %>  </a>
                     </div>
-                    <p><%= news.description %> </p>
                     <form method="POST" action="/bookmarks">
                         <input hidden type="text" name="title" value="<%= news.title %> ">
                         <input hidden type="text" name="source" value="<%= news.source.name %> ">
