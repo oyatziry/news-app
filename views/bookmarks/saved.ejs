@@ -1,25 +1,31 @@
 <div class="container">
-  <h1>This the the bookmark page</h1>
+  <h1>My Articles</h1>
+  <div class="row" id="row">
+    <% let counter = 0 %>
+    <!-- if no articles -->
+    <% if (articles.length < 1) { %>
+      <h4>No Articles Bookmarked</h4>
+    <% } %>
 
-  <h2>My Articles</h2>
-
-  <% if (articles.length < 1) { %>
-    <h4>No Articles Bookmarked</h4>
-  <% } %>
-
-  <% articles.forEach(function(news) { %>
-    <div>
-      <img src=<%= news.imageLink %> alt="images">
-      <h2 class="title">
-         <a href=<%= news.articleLink %>><%= news.title %></a>
-      </h2>
-      <p><%= news.description %> </p>
-      <h2 class="date">
-        <%= news.date %> 
-      </h2>
-      <form method="POST" action="/bookmarks/<%= news.id %>/?_method=DELETE">
-        <button class="btn btn-danger" type="submit">Delete</button>
-      </form>
-    </div>
-  <% }); %>
+    <!-- display bookmarks in 2 columns -->
+    <% if(counter !=0 && counter % 2 ==0) { %>
+      </div>
+      <div class="row" id="row">
+    <% } %>
+    <% articles.forEach(news => { %>
+      <!-- article information -->
+      <div class="col-12 col-md-6">
+        <img src="<%= news.imageLink %>" alt="images">
+        <div class="news-info">
+          <p class="source"> <%= news.source %>  / </p>
+          <p class= "date"> <%= news.date %> </p>
+          <a class="title" href="<%= news.articleLink %>"> <%= news.title.toUpperCase() %>  </a>
+          <!-- delete button -->
+          <form method="POST" action="/bookmarks/<%= news.id %>/?_method=DELETE">
+            <button class="btn btn-danger" type="submit">Delete</button>
+          </form>
+        </div>
+      </div>
+    <% }); %>
+  </div>
 </div>
