@@ -15,9 +15,64 @@ h1 {
 .login, .signUp{
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   height: 80vh;
+  margin-left: 450px;
+}
+
+#new-email {
+ position: absolute;
+ margin-top: -20px;
+}
+
+#new-password {
+ position: absolute;
+ margin-top: -20px;
+}
+
+#auth-password {
+ position: absolute;
+ margin-top: -20px;
+}
+.form-control {
+  width: 310px;
+}
+
+#signup-button, #login-button {
+  margin-left: 65px;
+  height: 40px;
+  width: 170px;
+  border-radius: 30px;
+  margin-top: 20px;
+}
+
+#signup-button:hover {
+  background-color: goldenrod;
+  border: none;
+}
+
+#login-button:hover {
+  background-color: goldenrod;
+  border: none;
+}
+
+.welcome-login-message {
+  margin-top: -10px;
+  margin-left: 90px;
+}
+
+.welcome-login-sign-in {
+  margin-bottom: -5px;
+  margin-left: 100px;
+}
+
+.welcome-signup-message {
+  margin-left: 100px;
+}
+
+.welcome-signup {
+  margin-left: -7px;
 }
 
 .lform, .sform{

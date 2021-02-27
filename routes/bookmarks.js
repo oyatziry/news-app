@@ -30,7 +30,7 @@ router.post('/', isLoggedIn, (req,res) => {
                 source: req.body.source,
                 date: req.body.date,
                 articleLink: req.body.articleLink,
-                image: req.body.image,
+                imageLink: req.body.imageLink,
                 author: req.body.author,
                 description:req.body.description,
             }
