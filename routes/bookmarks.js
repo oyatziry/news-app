@@ -10,6 +10,7 @@ router.get('/', isLoggedIn, (req, res) => {
         },
         include : [db.article]
     }).then((user)=>{
+        // console.log(user.articles)
             res.render('bookmarks/saved', { articles: user.articles, user:user})
     }).catch((error)=>{
         res.status(400).render('404')
@@ -22,6 +23,7 @@ router.post('/', isLoggedIn, (req,res) => {
             id : parseInt(req.user.id)
         }
     }).then(([returnedUser,created]) => {
+        console.log(req.body);
         db.article.findOrCreate({
             where:{
                 title: req.body.title
@@ -30,7 +32,7 @@ router.post('/', isLoggedIn, (req,res) => {
                 source: req.body.source,
                 date: req.body.date,
                 articleLink: req.body.articleLink,
-                image: req.body.image,
+                imageLink: req.body.imageLink,
                 author: req.body.author,
                 description:req.body.description,
             }
