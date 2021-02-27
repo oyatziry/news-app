@@ -3,7 +3,7 @@
 <% if (!currentUser) { %>
 <nav class="navbar navbar-expand-md navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/">NewsApp</a>
+        <a class="navbar-brand" href="/">Newsify</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -27,10 +27,9 @@
                     <form method="GET" class="form-inline my-2 my-md-0" action="/">
                         <input type="text" class="form-control" placeholder="Search" name="phrase" id="phrase">
                         <select type="text" class="custom-select" name="category" id="category" value="Category">
-                            <option selected>Category</option>
+                            <option value="general" selected>Category</option>
                             <option value="business">Business</option>
                             <option value="entertainment">Entertainment</option>
-                            <option value="general">General</option>
                             <option value="health">Health</option>
                             <option value="science">Science</option>
                             <option value="sports">Sports</option>
@@ -48,7 +47,7 @@
 <% } else { %> 
 <nav class="navbar navbar-expand-md navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/main">NewsApp</a>
+        <a class="navbar-brand" href="/main">Newsify</a>
         <a class="nav-link" style="color:black;" href="/bookmarks">Bookmarks</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -73,10 +72,9 @@
                     <form method="GET" class="form-inline my-2 my-md-0" action="/main">
                         <input type="text" class="form-control" placeholder="Search" name="phrase" id="phrase">
                         <select type="text" class="custom-select" name="category" id="category" value="Category">
-                            <option selected>Category</option>
+                            <option value="general" selected>Category</option>
                             <option value="business">Business</option>
                             <option value="entertainment">Entertainment</option>
-                            <option value="general">General</option>
                             <option value="health">Health</option>
                             <option value="science">Science</option>
                             <option value="sports">Sports</option>
