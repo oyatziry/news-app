@@ -4,13 +4,12 @@
         <% if (topNews.length > 0) {%>
             <% topNews.forEach(news => { %>
                 <% if(counter != 0 && counter % 3 == 0) { %>
-                    
                     <div class="row" id="row">
                 <% } %>
                 <div class="col-12 col-md-4">
                     <img src="<%= news.urlToImage %> " alt="images">
                     <div class="news-info">
-                        <p class="source"> <%= news.source.name %>  / </p>
+                        <p class="source"> <%= news.source.name %> </p>
                         <p class= "date"> <%= news.publishedAt %> </p>
                         <a class="title" href="<%= news.url %>"> <%= news.title.toUpperCase() %>  </a>
                     </div>
@@ -19,7 +18,7 @@
                         <input hidden type="text" name="source" value="<%= news.source.name %> ">
                         <input hidden type="text" name="date" value="<%= news.publishedAt %> ">
                         <input hidden type="text" name="articleLink" value="<%= news.url %> ">
-                        <input hidden type="text" name="image" value="<%= news.urlToImage %> ">
+                        <input hidden type="text" name="imageLink" value="<%= news.urlToImage %> ">
                         <input hidden type="text" name="author" value="<%= news.author %> ">
                         <input hidden type="text" name="description" value="<%= news.description %> ">
                         <input hidden type="text" name="userId" value="<%= currentUser.id %> ">
