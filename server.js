@@ -55,7 +55,7 @@ app.get('/',function(req,res){
           apikey: process.env.API_KEY,
       }
   }).then((responseData)=>{
-      res.render('index',{topNews:responseData.data.articles})
+    res.render('index',{topNews:responseData.data.articles})
   })
 })
 // after we logged in 
