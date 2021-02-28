@@ -112,13 +112,6 @@ h2{
   margin-top: 5%;
 }
 
-hr{
-  color: goldenrod;
-  background-color: goldenrod;
-  height: 1px;
-  margin-top: 5%;
-}
-
 svg{
   margin-left: 2px;
   height: 30px;
@@ -133,27 +126,12 @@ svg:hover{
   margin-bottom: 5%;
 }
 
-.main-img{
-  width: 100%;
-  object-fit: cover;
-  position: relative;
-  text-align: center;
-  color: white;
-}
-
-.img-title{
-  position: absolute;
-  top: 90%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 2em;
-}
-
 .article-imgs{
-  width: 300px;
-  height: 150px;
+  width: 350px;
+  height: 200px;
   object-fit: cover;
+  margin: auto;
+  display: block;
 }
 
 img{
@@ -195,15 +173,19 @@ img{
 
 .navbar{
   background-color: rgba(255,255,255,0.1) !important;
+  box-shadow: 1px 1px 10px lightgrey;
 }
 
  .nav-link{
-  font-size: 1.5em;
-  color:black;
+  font-size: 1.2em;
+  color:grey;
 }
 
 .bookicon{
   border-color: rgba(255,255,255,0);
+  display: inline-block;
+  float: left;
+  margin-right: 2%;
+  margin-top: 2%;
 }
-
 

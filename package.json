@@ -27,7 +27,8 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "pg": "^8.5.1",
-    "sequelize": "^6.5.0"
+    "sequelize": "^6.5.0",
+    "sequelize-cli": "^6.2.0"
   },
   "description": "This news app named “TBD” should allow users to enter the landing page showing the latest news without signing in or signing up but given the option to login by clicking the login link in the corner while also given an option to create an account in the login page. Users can search for articles by name, topic, author, or by publisher. Clicking on an article should open a pop-up containing the content of the article, publisher, author, and link to article. There should also be a button to be able to add articles to your bookmark page, which is a page of news articles that you either like or are interested in reading later. Must have an account for the bookmarks page.",
   "directories": {
