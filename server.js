@@ -53,9 +53,10 @@ app.get('/',function(req,res){
           q: req.query.phrase || "us",
           language: 'en',
           apikey: process.env.API_KEY,
+          category : req.query.category || "general"
       }
   }).then((responseData)=>{
-      res.render('index',{topNews:responseData.data.articles})
+    res.render('index',{topNews:responseData.data.articles})
   })
 })
 // after we logged in 
@@ -66,6 +67,7 @@ app.get('/main',isLoggedIn, function(req,res){
           q: req.query.phrase || "us",
           language: 'en',
           apikey: process.env.API_KEY,
+          category : req.query.category || "general"
       }
   }).then((responseData)=>{
       res.render('main',{topNews:responseData.data.articles})

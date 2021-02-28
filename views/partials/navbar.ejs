@@ -1,22 +1,16 @@
 
 <!-- if a user is NOT logged in -->
 <% if (!currentUser) { %>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-md navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/">NewsApp</a>
+        <a class="navbar-brand" href="/">Newsify</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         
         <div class="collapse navbar-collapse ml-auto w-100 justify-content-end" id="navbarSupportedContent">
             <ul class="navbar-nav">
-                <div class="navbar-nav search">
-                    <form method="GET" class="form-inline my-2 my-lg-0" action="/">
-                        <input type="text" name="phrase" id="phrase">
-                        <input type="submit" value="Search">
-                    </form>
-                </div>
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown form-inline">
                     <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
@@ -24,11 +18,26 @@
                         </svg>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/auth/login">LogIn</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/auth/signup">Sign Up</a>
+                        <a class="dropdown-item" href="/auth/login">LogIn</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/auth/signup">Sign Up</a>
                     </div>
                 </li>
+                <div class="navbar-nav search">
+                    <form method="GET" class="form-inline my-2 my-md-0" action="/">
+                        <input type="text" class="form-control" placeholder="Search" name="phrase" id="phrase">
+                        <select type="text" class="custom-select" name="category" id="category" value="Category">
+                            <option value="general" selected>Category</option>
+                            <option value="business">Business</option>
+                            <option value="entertainment">Entertainment</option>
+                            <option value="health">Health</option>
+                            <option value="science">Science</option>
+                            <option value="sports">Sports</option>
+                            <option value="technology">Technology</option>
+                        </select>
+                        <input class="form-control btn btn-outline-dark my-2 my-sm" type="submit" value="Search">
+                    </form>
+                </div>
             </ul>
         </div>
     </div>
@@ -36,21 +45,16 @@
 
 <!-- If a user is logged in -->
 <% } else { %> 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-md navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/main">NewsApp</a>
+        <a class="navbar-brand" href="/main">Newsify</a>
+        <a class="nav-link" href="/bookmarks">Bookmarks</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         
         <div class="collapse navbar-collapse ml-auto w-100 justify-content-end" id="navbarSupportedContent">
             <ul class="navbar-nav">
-                <div class="navbar-nav search">
-                    <form method="GET" class="form-inline my-2 my-lg-0" action="/main">
-                        <input type="text" name="phrase" id="phrase">
-                        <input type="submit" value="Search">
-                    </form>
-                </div>
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -59,12 +63,26 @@
                         </svg>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/profile">Profile</a>
-                    <a class="dropdown-item" href="/bookmarks">bookmarks</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/auth/logout">Logout</a>
+                        <a class="dropdown-item" href="/profile">Profile</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/auth/logout">Logout</a>
                     </div>
                 </li>
+                <div class="navbar-nav search">
+                    <form method="GET" class="form-inline my-2 my-md-0" action="/main">
+                        <input type="text" class="form-control" placeholder="Search" name="phrase" id="phrase">
+                        <select type="text" class="custom-select" name="category" id="category" value="Category">
+                            <option value="general" selected>Category</option>
+                            <option value="business">Business</option>
+                            <option value="entertainment">Entertainment</option>
+                            <option value="health">Health</option>
+                            <option value="science">Science</option>
+                            <option value="sports">Sports</option>
+                            <option value="technology">Technology</option>
+                        </select>
+                        <input class="form-control btn btn-outline-dark my-2 my-sm" type="submit" value="Search">
+                    </form>
+                </div>
             </ul>
         </div>
     </div>
