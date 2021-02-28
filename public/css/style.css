@@ -1,6 +1,6 @@
 body{
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-image: url('/images/background.jpg');
 }
 
@@ -112,13 +112,6 @@ h2{
   margin-top: 5%;
 }
 
-/* hr{
-  color: goldenrod;
-  background-color: goldenrod;
-  height: 1px;
-  margin-top: 5%;
-} */
-
 svg{
   margin-left: 2px;
   height: 30px;
@@ -132,23 +125,6 @@ svg:hover{
 #row{
   margin-bottom: 5%;
 }
-
-/* .main-img{
-  width: 100%;
-  object-fit: cover;
-  position: relative;
-  text-align: center;
-  color: white;
-}
-
-.img-title{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 2em;
-} */
 
 .article-imgs{
   width: 350px;
