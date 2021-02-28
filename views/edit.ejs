@@ -1,17 +1,15 @@
-<div class="col-12 col-md-4 post" id="background-signup">
-    <div class="signUp">
-        <form action="/profile/<%=user.id%>/?_method=PUT" class="sform" method="POST">
-            <h3 class="welcome-signup">Welcome, Let's change your details</h3>
-            <p class="welcome-signup-message">Here.....</p>
-            <div class="form-group">
-                <label for="new-email"></label>
-                <input type="email" class="form-control" id="new-email" name="email" aria-describedby="emailHelp" placeholder="Email address">
-            </div>
-            <div class="form-group">
-                <label for="new-name"></label>
-                <input type="text" class="form-control" id="new-name" name="name" aria-describedby="emailHelp" placeholder="Full Name">
-            </div>
-                <button type="submit" id="signup-button" class="btn btn-primary">Edit</button>
-        </form>
-    </div>
+<div class="signUp">
+    <form action="/profile/<%=user.id%>/?_method=PUT" class="sform" method="POST">
+        <h3 class="welcome-signup">Welcome, Let's change your details</h3>
+        <p class="welcome-signup-message">Here.....</p>
+        <div class="form-group">
+            <label for="new-email"></label>
+            <input type="email" class="form-control" id="new-email" name="email" aria-describedby="emailHelp" placeholder="Email address">
+        </div>
+        <div class="form-group">
+            <label for="new-name"></label>
+            <input type="text" class="form-control" id="new-name" name="name" aria-describedby="emailHelp" placeholder="Full Name">
+        </div>
+            <button type="submit" id="signup-button" class="btn btn-primary">Edit</button>
+    </form>
 </div>
