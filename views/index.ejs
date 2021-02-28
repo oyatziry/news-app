@@ -8,9 +8,9 @@
                     <div class ="row" id="row">
                 <% } %>
                 <div class="col-12 col-md-4">
-                    <img src="<%= news.urlToImage %> " alt="images">
+                    <img src="<%= news.urlToImage %> " alt="images" class="article-imgs">
                     <div class="news-info">
-                        <p class="source"> <%= news.source.name %> </p>
+                        <p class="source"> <%= news.source.name %> | </p>
                         <p class= "date" id="bdate"> <%= news.publishedAt %> </p>
                         <a class="title" href="<%= news.url %> " target="_blank"> <%= news.title.toUpperCase() %></a>
                     </div>

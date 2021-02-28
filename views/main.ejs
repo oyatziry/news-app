@@ -20,7 +20,7 @@
                 <% } %>
                 <div class="col-12 col-md-4 post">
                     <div class="imgicon">
-                        <img src="<%= news.urlToImage %> " alt="images">
+                        <img src="<%= news.urlToImage %> " alt="images" class="article-imgs">
                     <form method="POST" action="/bookmarks">
                         <input hidden type="text" name="title" value="<%= news.title %> ">
                         <input hidden type="text" name="source" value="<%= news.source.name %> ">
@@ -36,7 +36,7 @@
                     </form>
                     </div>
                     <div class="news-info">
-                        <p class="source"> <%= news.source.name %> </p>
+                        <p class="source"> <%= news.source.name %> | </p>
                         <p class= "date"> <%= news.publishedAt %> </p>
                         <a class="title" href="<%= news.url %>"> <%= news.title.toUpperCase() %>  </a>
                     </div>
