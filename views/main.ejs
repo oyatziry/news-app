@@ -17,29 +17,35 @@
                 <% if(counter != 0 && counter % 3 == 0) { %>
                     <div class="row" id="row">
                 <% } %>
-                <div class="col-12 col-md-4">
-                    <img src="<%= news.urlToImage %> " alt="images">
-                    <div class="news-info">
-                        <p class="source"> <%= news.source.name %>  | </p>
-                        <p class= "date"> <%= news.publishedAt %> </p>
-                        <a class="title" href="<%= news.url %>" target="_blank"> <%= news.title.toUpperCase() %>  </a>
-                        <form method="POST" action="/bookmarks">
-                            <input hidden type="text" name="title" value="<%= news.title %> ">
-                            <input hidden type="text" name="source" value="<%= news.source.name %> ">
-                            <input hidden type="text" name="date" value="<%= news.publishedAt %> ">
-                            <input hidden type="text" name="articleLink" value="<%= news.url %> ">
-                            <input hidden type="text" name="imageLink" value="<%= news.urlToImage %> ">
-                            <input hidden type="text" name="author" value="<%= news.author %> ">
-                            <input hidden type="text" name="description" value="<%= news.description %> ">
-                            <input hidden type="text" name="userId" value="<%= currentUser.id %> ">
-                            <button type="submit">Add to Bookmark</button>
-                        </form>
+                <div class="col-12 col-md-4 post">
+                    <div class="imgicon">
+                        <img src="<%= news.urlToImage %> " alt="images">
+                    <form method="POST" action="/bookmarks">
+                        <input hidden type="text" name="title" value="<%= news.title %> ">
+                        <input hidden type="text" name="source" value="<%= news.source.name %> ">
+                        <input hidden type="text" name="date" value="<%= news.publishedAt %> ">
+                        <input hidden type="text" name="articleLink" value="<%= news.url %> ">
+                        <input hidden type="text" name="imageLink" value="<%= news.urlToImage %> ">
+                        <input hidden type="text" name="author" value="<%= news.author %> ">
+                        <input hidden type="text" name="description" value="<%= news.description %> ">
+                        <input hidden type="text" name="userId" value="<%= currentUser.id %> ">
+                        <button class="bookicon" type="submit">
+                            <img src="/images/bookmark.svg" alt="i">
+                        </button>
+                    </form>
                     </div>
+                    <div class="news-info">
+                        <p class="source"> <%= news.source.name %> </p>
+                        <p class= "date"> <%= news.publishedAt %> </p>
+                        <a class="title" href="<%= news.url %>"> <%= news.title.toUpperCase() %>  </a>
+                    </div>
+                    
                 </div>
                 <% counter++ %>
             <% }) %> 
         <% } else { %>
-            <p>Opps! No such result was found. Try Again....</p> 
+            <p>Opps! No such result was found. Try Again....</p>
+            <iframe src="https://giphy.com/embed/9J7tdYltWyXIY" width="480" height="404"></iframe>
         <% } %>  
     </div>
 </div>
