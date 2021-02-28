@@ -13,17 +13,34 @@
     "supertest": "^4.0.2"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "bcrypt": "^5.0.0",
     "connect-flash": "^0.1.1",
+    "date-and-time": "^0.14.2",
     "dotenv": "^8.2.0",
-    "ejs": "^3.1.5",
+    "ejs": "^3.1.6",
     "express": "^4.17.1",
     "express-ejs-layouts": "^2.5.0",
     "express-session": "^1.17.1",
+    "method-override": "^3.0.0",
     "morgan": "^1.10.0",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
-    "pg": "^8.4.1",
-    "sequelize": "^6.3.5"
-  }
+    "pg": "^8.5.1",
+    "sequelize": "^6.5.0"
+  },
+  "description": "This news app named “TBD” should allow users to enter the landing page showing the latest news without signing in or signing up but given the option to login by clicking the login link in the corner while also given an option to create an account in the login page. Users can search for articles by name, topic, author, or by publisher. Clicking on an article should open a pop-up containing the content of the article, publisher, author, and link to article. There should also be a button to be able to add articles to your bookmark page, which is a page of news articles that you either like or are interested in reading later. Must have an account for the bookmarks page.",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oyatziry/news-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/oyatziry/news-app/issues"
+  },
+  "homepage": "https://github.com/oyatziry/news-app#readme"
 }

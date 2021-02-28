@@ -1,0 +1,31 @@
+<div class="container">
+  <h2> <%=user.name %>'s' Bookmarks</h2>
+  <div class="row" id="row">
+    <% let counter = 0 %>
+    <!-- if no articles -->
+    <% if (articles.length < 1) { %>
+      <h4>No Articles Bookmarked</h4>
+    <% } %>
+
+    <!-- display bookmarks in 2 columns -->
+    <% if(counter !=0 && counter % 2 ==0) { %>
+      </div>
+      <div class="row" id="row">
+    <% } %>
+    <% articles.forEach(news => { %>
+      <!-- article information -->
+      <div class="col-12 col-md-6">
+        <img src="<%= news.imageLink %>" alt="images">
+        <div class="news-info">
+          <p class="source"> <%= news.source %>  | </p>
+          <p class= "date"> <%= news.date %> </p>
+          <a class="title" href="<%= news.articleLink %>" target="_blank"> <%= news.title.toUpperCase() %>  </a>
+          <!-- delete button -->
+          <form method="POST" action="/bookmarks/<%= news.id %>/?_method=DELETE" class="bookmark-dlt-btn">
+            <button class="btn btn-danger" type="submit">Delete</button>
+          </form>
+        </div>
+      </div>
+    <% }); %>
+  </div>
+</div>

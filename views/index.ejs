@@ -1,1 +1,24 @@
-<h2>Homepage</h2>
+<div class="container">
+    <div class="row" id="row">
+        <% let counter = 0 %>
+        <% if (topNews.length > 0) {%>
+            <% topNews.forEach(news => { %>
+                <% if(counter !=0 && counter % 3 == 0) { %>
+                    </div>
+                    <div class ="row" id="row">
+                <% } %>
+                <div class="col-12 col-md-4">
+                    <img src="<%= news.urlToImage %> " alt="images" class="article-imgs">
+                    <div class="news-info">
+                        <p class="source"> <%= news.source.name %> | </p>
+                        <p class= "date" id="bdate"> <%= news.publishedAt %> </p>
+                        <a class="title" href="<%= news.url %> " target="_blank"> <%= news.title.toUpperCase() %></a>
+                    </div>
+                </div>
+                <% counter++ %>
+            <% }) %> 
+        <% } else { %>
+            <p>Opps! No such result was found. Try Again....</p> 
+        <% } %>  
+    </div>
+</div>
