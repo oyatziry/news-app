@@ -14,8 +14,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "bcrypt": "^3.0.8",
-    "bootstrap-icons": "^1.4.0",
+    "bcrypt": "^5.0.0",
     "connect-flash": "^0.1.1",
     "date-and-time": "^0.14.2",
     "dotenv": "^8.2.0",
