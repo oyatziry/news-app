@@ -3,6 +3,7 @@ const router = express.Router()
 const isLoggedIn = require('../middleware/isLoggedIn')
 const db = require("../models")
 
+// GET - '/' - route for bookmark page
 router.get('/', isLoggedIn, (req, res) => {
     db.user.findOne({
         where:{
@@ -17,6 +18,7 @@ router.get('/', isLoggedIn, (req, res) => {
     })
 });
 
+// POST - '/' - gets info of article to post in bookmark page
 router.post('/', isLoggedIn, (req,res) => {
     db.user.findOrCreate({
         where: {
@@ -45,7 +47,7 @@ router.post('/', isLoggedIn, (req,res) => {
     })
 })
 
-// delete
+// DELETE - '/:id' - removes user bookmark
 router.delete('/:id', isLoggedIn, (req, res) => {
     db.usersArticles.destroy({
       where: { articleId: req.params.id }
