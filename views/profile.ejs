@@ -1,17 +1,22 @@
 <div class="container">
-    <h1>Profile Page</h1>
-    <h2>Welcome to your Profile Page </h2>
-    <p>---------------------------------------------------------------</p>
-    <h3>Email: <%= user.email %> </h3>
-    <p>---------------------------------------------------------------</p>
-    <h3><%= user.name %> </h3>
-    <p>---------------------------------------------------------------</p>
-    <form method="POST" action="/profile/<%= user.id %>/?_method=DELETE">
-        <button class="btn btn-danger" type="submit">Delete</button>
-    </form>
-    <form action="/profile/edit/<%=user.id%>/?_method=PUT" class="sform" method="GET">
-        <input hidden type="text" name="title" value="<%= user.name %> ">
-        <input hidden type="text" name="title" value="<%= user.email %> ">
-        <button type="submit" class="btn btn-primary">Edit</button>
-    </form>
+    <h1 class="text-center"> Hello, <%= user.name %>!</h1>
+    <h4 class="text-center"> Welcome to your profile page </h4>
+    <div class="container">
+        <div class="text-box">
+            <p> <b>Email: </b> <%= user.email %> </p>
+        </div>
+        <div class="text-box">
+            <p> <b>Name: </b> <%= user.name %> </p>
+        </div>
+    </div>
+    <div class="buttons d-flex justify-content-end">
+        <form method="GET" action="/profile/edit/<%=user.id%>/?_method=PUT" class="p-2">
+            <input hidden type="text" name="title" value="<%= user.name %> ">
+            <input hidden type="text" name="title" value="<%= user.email %> ">
+            <button type="submit" class="btn btn-primary">Edit Profile</button>
+        </form>
+        <form method="POST" action="/profile/<%= user.id %>/?_method=DELETE" class="p-2">
+            <button class="btn btn-danger" type="submit">Delete</button>
+        </form>
+    </div>
 </div>

@@ -11,7 +11,11 @@ nav ul li {
 }
 
 h1 {
-  color: chartreuse;
+  color: black;
+}
+
+h2{
+  margin-bottom: 3%;
 }
 
 .navbar-brand{
@@ -34,6 +38,13 @@ h1 {
   margin-top: 5%;
 }
 
+hr{
+  color: goldenrod;
+  background-color: goldenrod;
+  height: 1px;
+  margin-top: 5%;
+}
+
 svg{
   margin-left: 2px;
   height: 30px;
@@ -48,14 +59,30 @@ svg:hover{
   margin-bottom: 5%;
 }
 
+.main-img{
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.img-title{
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2em;
+}
+
 img{
   width: 100%;
   object-fit: cover;
 }
 
 .news-info{
-  margin-right: 5%;
-  margin-top: 2%;
+  margin: 2% 5% 10% 0;
 }
 
 .source{
@@ -73,6 +100,17 @@ img{
   display: block;
   color: black;
   font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 2%;
+}
+
+.text-box{
+  background-color: #F8F9FA;
+  padding: 2%;
+  margin: 1%;
+}
+
+.bookmark-dlt-btn{
+  margin-top: 2%;
 }
 
 .navbar{

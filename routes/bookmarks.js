@@ -23,7 +23,6 @@ router.post('/', isLoggedIn, (req,res) => {
             id : parseInt(req.user.id)
         }
     }).then(([returnedUser,created]) => {
-        console.log(req.body);
         db.article.findOrCreate({
             where:{
                 title: req.body.title
