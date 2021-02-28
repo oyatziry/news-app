@@ -3,7 +3,7 @@ const router = express.Router()
 const isLoggedIn = require('../middleware/isLoggedIn')
 const db = require("../models")
 
-
+// GET - user info
 router.get('/', isLoggedIn, (req, res) => {
     db.user.findOne({
         where : {
@@ -29,7 +29,8 @@ router.delete('/:id', isLoggedIn, (req, res) => {
       res.status(400).render('404');
     })
 })
-//edit for rendering
+
+//GET - /edit/:id - get user info when click on edit
 router.get('/edit/:id', function(req, res){
     db.user.findOne({
       where: {
@@ -39,7 +40,8 @@ router.get('/edit/:id', function(req, res){
       res.render('edit', {user: user});
     })
 });
-// edit 
+
+// PUT - /:id - takes updated info to post when user updates their profile 
 router.put('/:id', (req,res) => {
     db.user.update(
       { name : req.body.name,
