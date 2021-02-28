@@ -46,6 +46,7 @@ app.use((req, res, next) => {
 })
 
 
+//when user is not logged in
 app.get('/',function(req,res){
   const apiUrl = 'https://newsapi.org/v2/top-headlines'
   axios.get(apiUrl,{
@@ -59,6 +60,8 @@ app.get('/',function(req,res){
     res.render('index',{topNews:responseData.data.articles})
   })
 })
+
+
 // after we logged in 
 app.get('/main',isLoggedIn, function(req,res){
   const apiUrl = 'https://newsapi.org/v2/top-headlines'
