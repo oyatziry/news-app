@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>My Articles</h1>
+  <h2> <%=user.name %>'s' Bookmarks</h2>
   <div class="row" id="row">
     <% let counter = 0 %>
     <!-- if no articles -->
@@ -17,11 +17,11 @@
       <div class="col-12 col-md-6">
         <img src="<%= news.imageLink %>" alt="images">
         <div class="news-info">
-          <p class="source"> <%= news.source %>  / </p>
+          <p class="source"> <%= news.source %>  | </p>
           <p class= "date"> <%= news.date %> </p>
-          <a class="title" href="<%= news.articleLink %>"> <%= news.title.toUpperCase() %>  </a>
+          <a class="title" href="<%= news.articleLink %>" target="_blank"> <%= news.title.toUpperCase() %>  </a>
           <!-- delete button -->
-          <form method="POST" action="/bookmarks/<%= news.id %>/?_method=DELETE">
+          <form method="POST" action="/bookmarks/<%= news.id %>/?_method=DELETE" class="bookmark-dlt-btn">
             <button class="btn btn-danger" type="submit">Delete</button>
           </form>
         </div>
