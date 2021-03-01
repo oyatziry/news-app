@@ -6,6 +6,7 @@ Once the user has created an account they will have the ability to add articles 
 
 Newsify is the number 1 news search app in GA for Cohort SEIR-119! If the user is not satisfied they can always delete their profile or just edit their name or email. So, get your news now!
 
+https://newsgaproject2.herokuapp.com/
 
 # Technologies Used
 
