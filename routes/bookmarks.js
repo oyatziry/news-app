@@ -11,8 +11,7 @@ router.get('/', isLoggedIn, (req, res) => {
         },
         include : [db.article]
     }).then((user)=>{
-        // console.log(user.articles)
-            res.render('bookmarks/saved', { articles: user.articles, user:user})
+        res.render('bookmarks/saved', { articles: user.articles, user:user})
     }).catch((error)=>{
         res.status(400).render('404')
     })
